@@ -1,0 +1,316 @@
+{
+  "timestamp": "2025-08-25T15:39:23.139404",
+  "state": "completed",
+  "metrics": {
+    "total_channels": 50,
+    "channels_processed": 50,
+    "channels_failed": 0,
+    "total_videos": 1000,
+    "videos_downloaded": 1000,
+    "videos_failed": 0,
+    "bytes_downloaded": 5242880000,
+    "start_time": "2025-08-25T15:39:21.881688"
+  },
+  "channel_progress": {
+    "https://youtube.com/@perf000": {
+      "name": "Performance Channel 0",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf001": {
+      "name": "Performance Channel 1",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf002": {
+      "name": "Performance Channel 2",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf003": {
+      "name": "Performance Channel 3",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf004": {
+      "name": "Performance Channel 4",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf005": {
+      "name": "Performance Channel 5",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf006": {
+      "name": "Performance Channel 6",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf007": {
+      "name": "Performance Channel 7",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf008": {
+      "name": "Performance Channel 8",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf009": {
+      "name": "Performance Channel 9",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf010": {
+      "name": "Performance Channel 10",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf011": {
+      "name": "Performance Channel 11",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf012": {
+      "name": "Performance Channel 12",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf013": {
+      "name": "Performance Channel 13",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf014": {
+      "name": "Performance Channel 14",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf015": {
+      "name": "Performance Channel 15",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf016": {
+      "name": "Performance Channel 16",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf017": {
+      "name": "Performance Channel 17",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf018": {
+      "name": "Performance Channel 18",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf019": {
+      "name": "Performance Channel 19",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf020": {
+      "name": "Performance Channel 20",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf021": {
+      "name": "Performance Channel 21",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf022": {
+      "name": "Performance Channel 22",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf023": {
+      "name": "Performance Channel 23",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf024": {
+      "name": "Performance Channel 24",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf025": {
+      "name": "Performance Channel 25",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf026": {
+      "name": "Performance Channel 26",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf027": {
+      "name": "Performance Channel 27",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf028": {
+      "name": "Performance Channel 28",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf029": {
+      "name": "Performance Channel 29",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf030": {
+      "name": "Performance Channel 30",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf031": {
+      "name": "Performance Channel 31",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf032": {
+      "name": "Performance Channel 32",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf033": {
+      "name": "Performance Channel 33",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf034": {
+      "name": "Performance Channel 34",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf035": {
+      "name": "Performance Channel 35",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf036": {
+      "name": "Performance Channel 36",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf037": {
+      "name": "Performance Channel 37",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf038": {
+      "name": "Performance Channel 38",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf039": {
+      "name": "Performance Channel 39",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf040": {
+      "name": "Performance Channel 40",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf041": {
+      "name": "Performance Channel 41",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf042": {
+      "name": "Performance Channel 42",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf043": {
+      "name": "Performance Channel 43",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf044": {
+      "name": "Performance Channel 44",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf045": {
+      "name": "Performance Channel 45",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf046": {
+      "name": "Performance Channel 46",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf047": {
+      "name": "Performance Channel 47",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf048": {
+      "name": "Performance Channel 48",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    },
+    "https://youtube.com/@perf049": {
+      "name": "Performance Channel 49",
+      "total_videos": 20,
+      "videos_processed": 20,
+      "status": "completed"
+    }
+  }
+}

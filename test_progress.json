@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-08-25T14:44:09.836211",
+  "state": "paused",
+  "metrics": {
+    "total_channels": 5,
+    "channels_processed": 2,
+    "channels_failed": 0,
+    "total_videos": 25,
+    "videos_downloaded": 22,
+    "videos_failed": 1,
+    "bytes_downloaded": 1153433600,
+    "start_time": "2025-08-25T14:43:59.819918"
+  },
+  "channel_progress": {
+    "https://youtube.com/@persist1": {
+      "name": "Persist Channel 1",
+      "total_videos": 10,
+      "videos_processed": 10,
+      "status": "completed"
+    },
+    "https://youtube.com/@persist2": {
+      "name": "Persist Channel 2",
+      "total_videos": 15,
+      "videos_processed": 15,
+      "status": "completed"
+    }
+  }
+}

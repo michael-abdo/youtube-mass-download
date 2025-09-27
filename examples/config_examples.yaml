@@ -1,0 +1,264 @@
+# Mass Download Configuration Examples
+#
+# This file contains different configuration examples for various use cases.
+# Copy the relevant section to your config/config.yaml file.
+
+# =============================================================================
+# HIGH PERFORMANCE CONFIGURATION
+# For powerful servers with good bandwidth and CPU resources
+# =============================================================================
+mass_download_high_performance:
+  max_concurrent_channels: 8
+  max_concurrent_downloads: 15
+  max_videos_per_channel: 200
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 85.0
+    max_memory_percent: 80.0
+    max_queue_size: 200
+    check_interval_seconds: 3.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 8
+      recovery_timeout: 45
+      half_open_requests: 2
+    retry:
+      max_retries: 5
+      initial_delay: 0.5
+      max_delay: 20.0
+      exponential_base: 1.8
+
+# =============================================================================
+# CONSERVATIVE CONFIGURATION  
+# For shared or limited-resource environments
+# =============================================================================
+mass_download_conservative:
+  max_concurrent_channels: 2
+  max_concurrent_downloads: 3
+  max_videos_per_channel: 50
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 60.0
+    max_memory_percent: 70.0
+    max_queue_size: 50
+    check_interval_seconds: 10.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 3
+      recovery_timeout: 120
+      half_open_requests: 1
+    retry:
+      max_retries: 3
+      initial_delay: 2.0
+      max_delay: 60.0
+      exponential_base: 2.0
+
+# =============================================================================
+# DEVELOPMENT/TESTING CONFIGURATION
+# For development and testing purposes
+# =============================================================================
+mass_download_development:
+  max_concurrent_channels: 1
+  max_concurrent_downloads: 2
+  max_videos_per_channel: 10
+  skip_existing_videos: true
+  continue_on_error: false  # Fail fast for debugging
+  download_videos: false    # Skip actual downloads in testing
+  download_mode: "metadata_only"
+  
+  resource_limits:
+    max_cpu_percent: 50.0
+    max_memory_percent: 60.0
+    max_queue_size: 20
+    check_interval_seconds: 5.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 2
+      recovery_timeout: 30
+      half_open_requests: 1
+    retry:
+      max_retries: 1
+      initial_delay: 1.0
+      max_delay: 5.0
+      exponential_base: 2.0
+
+# =============================================================================
+# METADATA ONLY CONFIGURATION
+# For collecting channel/video metadata without downloading files
+# =============================================================================
+mass_download_metadata_only:
+  max_concurrent_channels: 5
+  max_concurrent_downloads: 0  # No actual downloads
+  max_videos_per_channel: 1000
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: false
+  download_mode: "metadata_only"
+  
+  resource_limits:
+    max_cpu_percent: 70.0
+    max_memory_percent: 75.0
+    max_queue_size: 100
+    check_interval_seconds: 5.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 10
+      recovery_timeout: 60
+      half_open_requests: 3
+    retry:
+      max_retries: 5
+      initial_delay: 1.0
+      max_delay: 30.0
+      exponential_base: 2.0
+
+# =============================================================================
+# BATCH PROCESSING CONFIGURATION
+# For processing large numbers of channels efficiently  
+# =============================================================================
+mass_download_batch:
+  max_concurrent_channels: 6
+  max_concurrent_downloads: 12
+  max_videos_per_channel: 100
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 80.0
+    max_memory_percent: 85.0
+    max_queue_size: 150
+    check_interval_seconds: 5.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 6
+      recovery_timeout: 90
+      half_open_requests: 2
+    retry:
+      max_retries: 4
+      initial_delay: 1.5
+      max_delay: 45.0
+      exponential_base: 2.2
+
+# =============================================================================
+# CAUTIOUS CONFIGURATION
+# For unreliable networks or channels with potential issues
+# =============================================================================
+mass_download_cautious:
+  max_concurrent_channels: 1
+  max_concurrent_downloads: 1
+  max_videos_per_channel: 25
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 50.0
+    max_memory_percent: 60.0
+    max_queue_size: 25
+    check_interval_seconds: 15.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 2
+      recovery_timeout: 180
+      half_open_requests: 1
+    retry:
+      max_retries: 8
+      initial_delay: 5.0
+      max_delay: 120.0
+      exponential_base: 1.5
+
+# =============================================================================
+# ARCHIVE CONFIGURATION
+# For comprehensive archival of channels with all videos
+# =============================================================================
+mass_download_archive:
+  max_concurrent_channels: 3
+  max_concurrent_downloads: 6
+  max_videos_per_channel: 5000  # Very high limit for archival
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 75.0
+    max_memory_percent: 80.0
+    max_queue_size: 500
+    check_interval_seconds: 10.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 5
+      recovery_timeout: 300  # Long recovery time for archival
+      half_open_requests: 1
+    retry:
+      max_retries: 10
+      initial_delay: 3.0
+      max_delay: 180.0
+      exponential_base: 1.8
+
+# =============================================================================
+# REAL-TIME CONFIGURATION
+# For real-time processing with quick updates
+# =============================================================================  
+mass_download_realtime:
+  max_concurrent_channels: 4
+  max_concurrent_downloads: 8
+  max_videos_per_channel: 20  # Focus on recent videos
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"
+  
+  resource_limits:
+    max_cpu_percent: 70.0
+    max_memory_percent: 75.0
+    max_queue_size: 75
+    check_interval_seconds: 2.0  # Frequent checks
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 4
+      recovery_timeout: 30  # Quick recovery
+      half_open_requests: 2
+    retry:
+      max_retries: 3
+      initial_delay: 0.5
+      max_delay: 10.0
+      exponential_base: 2.0
+
+# =============================================================================
+# CONFIGURATION SELECTION GUIDE
+# =============================================================================
+#
+# Choose configuration based on your use case:
+#
+# - high_performance: Powerful servers, good bandwidth, need speed
+# - conservative: Shared resources, want to be gentle on system
+# - development: Testing, debugging, development work
+# - metadata_only: Only need channel/video information, no files
+# - batch: Processing many channels efficiently
+# - cautious: Unreliable networks, problematic channels  
+# - archive: Complete archival, want everything
+# - realtime: Focus on latest content, quick updates
+#
+# To use a configuration:
+# 1. Copy the relevant section to config/config.yaml
+# 2. Rename it to just "mass_download:" (remove the suffix)
+# 3. Adjust values as needed for your specific requirements

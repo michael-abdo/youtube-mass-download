@@ -1,0 +1,32 @@
+row_id,person_name,personality_type,email,file_count,file_sources,files,youtube_status,drive_status,youtube_playlist,drive_playlist,discovery_reason
+462,Miranda Story Ruiz,FM-Te/Se-PC/S(B) #3,mirandacan2014@gmail.com,3,['drive'],"['1KicEfmftS5zc6BIeOKs7y7TMokOuQAmJ.html', '1EHSk76Pyj_HLlGtdXZCYde9ZEHV6CbQu.html', 'Vtuber Design Concept (Not Yet Launched).pdf']",failed,completed,nan,nan,files_despite_failed_status
+419,Daraith Long,MF-Se/Fi-CS/P(B) #3,dararith.long@gmail.com,1,['drive'],['1DAZmv6myb2W3URfWEVhBWWDfDOnEDrIA.html'],failed,completed,nan,nan,files_despite_failed_status
+120,Samuel Rose,FF-Ti/Se-CS/P(B) #3,sjrose05@yahoo.co.uk,1,['drive'],['Google Doc 2023.m4a'],failed,completed,nan,nan,files_despite_failed_status
+144,Ryder,MM-Se/Te-PC/B(S) #4,eternuos@gmail.com,1,['drive'],['Pro Tips.mp3'],failed,completed,nan,nan,files_despite_failed_status
+457,James Hanley,MF-Fi/Ni-SB/P(C) #4,jameshanleysomers@gmail.com,1,['drive'],['126gCQWEx1hm4G5jDVGsG8m06wdFibG9P.html'],failed,completed,nan,nan,files_despite_failed_status
+433,Johannes Rode,MF-Ti/Ne-CP/S(B) #4,Johannes.Rode@posteo.de,1,['drive'],['1BrhqUmDolICYdsH4ZvuUyUw47T1oExAM.html'],failed,completed,nan,nan,files_despite_failed_status
+106,Jasym Lewis,MM-Ne/Ti-CS/B(P) #4,sashabeegan@gmail.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,nan,nan,files_despite_failed_status
+451,Christina,FM-Se/Ti-CS/B(P) #2,themoonlitpath@icloud.com,6,['drive'],"['Not tester! My bad.m4a', 'Number 1.MOV', 'Number 2.MOV', 'Number 4.MOV', 'Number 3.MOV', 'Tester? Kinesthetic? Idk.m4a']",failed,completed,nan,nan,files_despite_failed_status
+493,Maddie Boyle,FF-Te/Se-PC/S(B) #4,maddie.41014@gmail.com,1,['youtube'],['4HfkyhvaaWc_transcript.vtt'],partial,,"https://www.youtube.com/watch_videos?video_ids=4HfkyhvaaWc,amupMWpSA5I",nan,incomplete_status_but_files_found
+134,Tony Pun,MF-Ne/Ti-CP/B(S) #3,tpun27@gmail.com,1,['drive'],['Pro Tips.mp3'],failed,completed,nan,nan,files_despite_failed_status
+442,Fan Xingdong,FF-Fi/Ne-CS/P(B) #1,overwhelmingdiarrhea@gmail.com,1,['drive'],['Captions.srt'],failed,completed,nan,nan,files_despite_failed_status
+461,Samuel Kotevski,MF-Ne/Ti-CP/B(S) #1,samuel-tjern.kot@hotmail.com,1,['drive'],['10hZB1lCyg5F8JaQxK-5gLaphxTguM79l.html'],failed,completed,nan,nan,files_despite_failed_status
+429,Ellen,FF-Fi/Ne-CP/S(B) #4,tongxinranellen@gmail.com,5,['drive'],"['1DqJ9g954W0kT4V3yAFFTY7gbP0JrFgOm.html', '17A0hgMKHfL8lF_1P4KocWo0TLz3eK-gN.html', '14wo6rD4AqZDH60FW-Creve2yj3mpF-y-.html', '19v8EN0EfTFPw-vvXNq_6fNBN4oUcyQw1.html', '1qbN54cdHSzth4YvpA2TOJQ1W4z6uW9vg.html']",failed,completed,nan,nan,files_despite_failed_status
+426,Khaoula Kachouane,MF-Ni/Fi-SC/B(P) #1,khaoula.kachouane@gmail.com,2,['drive'],"['1ABmYjWqBckozdrYH_a84EP31h6Y0Zj_h.html', 'Clarifying C over B.m4a']",failed,completed,nan,nan,files_despite_failed_status
+477,Shelly Chen,FF-Si/Te-BS/C(P) #1,chensy624@outlook.com,1,['drive'],['1vp9yPbkD0mTtPRzPDHA6XjE1cwJOpbL4.html'],failed,completed,nan,nan,files_despite_failed_status
+459,Gugu,FM-Fi/Ne-CS/P(B) #3,1185524860@qq.com,4,['drive'],"['Gugu2.txt', 'Gugu2.mp4', 'gugu.srt', 'Gugu.mp4']",failed,completed,nan,nan,files_despite_failed_status
+139,Amy Wierzbicki,FM-Te/Se-PC/S(B) #4,Amy.wierzbicki@gmail.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,https://www.youtube.com/watch_videos?video_ids=BntS86Kq_rA,nan,files_despite_failed_status
+409,Kim Racanelli,FM-Si/Te-BS/C(P) #3,thewiseone1975@gmail.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,nan,nan,files_despite_failed_status
+476,Patryk Makara,FM-Ti/Ni-SC/B(P) #4,VisionTheoryOfficial@gmail.com,6,['drive'],"['Patryk Makara - OPS Typing Video.mp4', 'Random guitar faces.mp4', 'Optional - Old Typing Video worse quality.mp4', 'Lifting weight.mp4', 'Blooper 2.mp4', 'Blooper 1.mp4']",failed,completed,nan,nan,files_despite_failed_status
+474,Brenden Ohlsson,MM-Ne/Ti-CP/S(B) #4,ohlssonbrenden@gmail.com,1,['drive'],['1u4vS-_WKpW-RHCpIS4hls6K5grOii56F.html'],failed,completed,nan,nan,files_despite_failed_status
+492,Kiko,MF-Ti/Se-CP/B(S) #4,kiko2657775264@gmail.com,2,['drive'],"['KIKO OPS Vedio words.txt', 'kiko ops vedio.mp4']",pending,completed,nan,nan,files_despite_failed_status
+136,Lene Wessel,MF-Si/Ti-SC/P(B) #3,lenemarlen@wesselfamily.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,"https://www.youtube.com/watch_videos?video_ids=aVPCYuZkQn8,clDajZlGaDI",nan,files_despite_failed_status
+145,Shelby Buckalew,MF-Fi/Se-CP/B(S) #4,shelbybuckalew@gmail.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,nan,nan,files_despite_failed_status
+483,Taro,MF-Ne/Fi-CP/S(B) #3,taro3361046532@gmail.com,2,['drive'],"['taro official vedio.mp4', 'taro offical TXT.txt']",failed,completed,nan,nan,files_despite_failed_status
+92,Jason Siddle,MF-Ne/Fi-CS/P(B) #2,ayyjace@gmail.com,1,['drive'],['Google Doc 2023.m4a'],failed,completed,nan,nan,files_despite_failed_status
+398,Connor Lewis,FF-Ne/Ti-CP/B(S) #4,colewis@mtu.edu,11,['drive'],"['Intro.mp4', 'q4.mp4', 'q9.mp4', 'q3.mp4', 'q7.mp4', 'q10.mp4', 'q6.mp4', 'q1.mp4', 'q2.mp4', 'q8.mp4', 'q5.mp4']",failed,failed,nan,nan,files_despite_failed_status
+484,Emilie,FF-Si/Fi-SC/P(B) #3,waterspoutstwist@gmail.com,2,['drive'],"['2.Questions I answered.docx', '1.Please read me.docx']",failed,completed,nan,nan,files_despite_failed_status
+287,Michael Thomas,MF-Ne/Ti-CS/B(P) #3,polik890@gmail.com,1,['drive'],['Pro Tips.mp3'],failed,completed,nan,nan,files_despite_failed_status
+488,Jeremy May,FF-Ne/Fe-PB/C(S) #4,Jeremy:deathb4dishonor93@gmail.com,2,['youtube'],"['d6IR17a0M2o_transcript.vtt', 'd6IR17a0M2o.mp4']",,,https://www.youtube.com/watch_videos?video_ids=d6IR17a0M2o,nan,incomplete_status_but_files_found
+486,Shelsea Evans,MF-Si/Te-BS/P(C) #3,sevans0711@yahoo.com,1,['drive'],['1_dwbrXDDTlEYMGlJcQR3OsOxbAe2Ri2r.html'],failed,completed,nan,nan,files_despite_failed_status
+308,Ingvild Kalsveen,MF-Ni/Ti-SC/P(B) #3,i.kalsveen@gmail.com,1,['drive'],['Nytt opptak 4.mp3'],failed,completed,nan,nan,files_despite_failed_status

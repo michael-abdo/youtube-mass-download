@@ -1,0 +1,72 @@
+[
+  {
+    "test_name": "Truncated playlist URL",
+    "success": true,
+    "found_ids": [],
+    "reconstructed_count": 0,
+    "complete_playlist_urls": []
+  },
+  {
+    "test_name": "Separated playlist ID",
+    "success": true,
+    "found_ids": [
+      "PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ],
+    "reconstructed_count": 1,
+    "complete_playlist_urls": [
+      "https://www.youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ]
+  },
+  {
+    "test_name": "Multiple playlist IDs",
+    "success": true,
+    "found_ids": [
+      "PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ],
+    "reconstructed_count": 2,
+    "complete_playlist_urls": [
+      "https://youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA",
+      "https://www.youtube.com/playlist?list=PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "https://youtube.com/playlist?list=PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "https://www.youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ]
+  },
+  {
+    "test_name": "URL-encoded playlist",
+    "success": true,
+    "found_ids": [
+      "PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ],
+    "reconstructed_count": 1,
+    "complete_playlist_urls": [
+      "https://www.youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ]
+  },
+  {
+    "test_name": "Orphaned playlist IDs",
+    "success": true,
+    "found_ids": [
+      "PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ],
+    "reconstructed_count": 2,
+    "complete_playlist_urls": [
+      "https://www.youtube.com/playlist?list=PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "https://www.youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ]
+  },
+  {
+    "test_name": "Mixed content with partial URLs",
+    "success": true,
+    "found_ids": [
+      "PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ],
+    "reconstructed_count": 2,
+    "complete_playlist_urls": [
+      "https://www.youtube.com/playlist?list=PLu9i8x5U9PHhmD9K-5WY4EB12vyhL",
+      "https://www.youtube.com/playlist?list=PLp0u93QMy5vCYzE4OQydGEMEJjRizGDA"
+    ]
+  }
+]

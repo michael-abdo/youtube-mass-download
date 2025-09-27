@@ -1,0 +1,210 @@
+{
+  "documentation_timestamp": "2025-06-30T12:56:32.102396",
+  "purpose": "Document successful discovery patterns for replication",
+  "connor_lewis_case_study": {
+    "row_id": "398",
+    "name": "Connor Lewis",
+    "personality_type": "FF-Ne/Ti-CP/B(S) #4",
+    "email": "colewis@mtu.edu",
+    "youtube_status": "failed",
+    "drive_status": "failed",
+    "youtube_playlist": "nan",
+    "drive_playlist": "nan",
+    "file_count": 11,
+    "file_types": {
+      ".mp4": 11
+    },
+    "average_file_size": 112658691.27272727,
+    "total_content_size": 1239245604,
+    "file_details": [
+      {
+        "filename": "Intro.mp4",
+        "full_path": "drive_downloads/Intro.mp4",
+        "file_type": ".mp4",
+        "file_size": 3831963,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q4.mp4",
+        "full_path": "drive_downloads/q4.mp4",
+        "file_type": ".mp4",
+        "file_size": 170694923,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q9.mp4",
+        "full_path": "drive_downloads/q9.mp4",
+        "file_type": ".mp4",
+        "file_size": 43998439,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q3.mp4",
+        "full_path": "drive_downloads/q3.mp4",
+        "file_type": ".mp4",
+        "file_size": 171369722,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q7.mp4",
+        "full_path": "drive_downloads/q7.mp4",
+        "file_type": ".mp4",
+        "file_size": 109374246,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q10.mp4",
+        "full_path": "drive_downloads/q10.mp4",
+        "file_type": ".mp4",
+        "file_size": 54730472,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q6.mp4",
+        "full_path": "drive_downloads/q6.mp4",
+        "file_type": ".mp4",
+        "file_size": 127334878,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q1.mp4",
+        "full_path": "drive_downloads/q1.mp4",
+        "file_type": ".mp4",
+        "file_size": 107817840,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q2.mp4",
+        "full_path": "drive_downloads/q2.mp4",
+        "file_type": ".mp4",
+        "file_size": 178813806,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q8.mp4",
+        "full_path": "drive_downloads/q8.mp4",
+        "file_type": ".mp4",
+        "file_size": 92436961,
+        "directory": "drive_downloads"
+      },
+      {
+        "filename": "q5.mp4",
+        "full_path": "drive_downloads/q5.mp4",
+        "file_type": ".mp4",
+        "file_size": 178842354,
+        "directory": "drive_downloads"
+      }
+    ],
+    "discovery_success_factors": [
+      "high_file_count_indicates_bulk_download",
+      "video_content_successfully_preserved",
+      "substantial_content_size_preserved",
+      "files_in_single_directory_suggest_batch_operation"
+    ]
+  },
+  "successful_discovery_patterns": {
+    "status_override_pattern": {
+      "count": 29,
+      "description": "Files found despite failed/pending status"
+    },
+    "directory_preservation_pattern": {
+      "count": 31,
+      "description": "Files preserved in download directories"
+    },
+    "metadata_mismatch_pattern": {
+      "count": 0,
+      "description": "Metadata exists but status not updated"
+    },
+    "bulk_download_pattern": {
+      "count": 11,
+      "description": "Multiple files suggest successful bulk operation"
+    },
+    "mixed_source_pattern": {
+      "count": 0,
+      "description": "Files from both YouTube and Drive sources"
+    }
+  },
+  "failure_mode_analysis": {},
+  "replication_strategies": {
+    "metadata_scanning_strategy": {
+      "description": "Scan for definitive metadata files even when status shows failed",
+      "implementation": "Use filename-based metadata matching instead of status-based filtering",
+      "success_rate": "29/31 cases"
+    },
+    "directory_enumeration_strategy": {
+      "description": "Enumerate download directories to find preserved files",
+      "implementation": "Scan download directories for content files regardless of tracking status",
+      "success_rate": "31/31 cases"
+    },
+    "bulk_operation_detection": {
+      "description": "Identify patterns suggesting successful bulk downloads",
+      "implementation": "Look for multiple files with similar timestamps in same directory",
+      "success_rate": "11/31 cases"
+    }
+  },
+  "metadata_quality_indicators": {
+    "definitive_metadata_presence": "Strong indicator of successful mapping",
+    "file_count_consistency": "Multiple files suggest successful bulk operation",
+    "directory_clustering": "Files in same directory indicate batch processing",
+    "file_size_distribution": "Substantial file sizes indicate real content vs placeholders",
+    "extension_variety": "Multiple file types suggest comprehensive download"
+  },
+  "high_value_discoveries": [
+    {
+      "row_id": "476",
+      "name": "Patryk Makara",
+      "file_count": 6,
+      "total_size_mb": 2421.754635810852,
+      "personality_type": "FM-Ti/Ni-SC/B(P) #4"
+    },
+    {
+      "row_id": "429",
+      "name": "Ellen",
+      "file_count": 5,
+      "total_size_mb": 0.01155853271484375,
+      "personality_type": "FF-Fi/Ne-CP/S(B) #4"
+    },
+    {
+      "row_id": "483",
+      "name": "Taro",
+      "file_count": 2,
+      "total_size_mb": 850.2933712005615,
+      "personality_type": "MF-Ne/Fi-CP/S(B) #3"
+    },
+    {
+      "row_id": "488",
+      "name": "Jeremy May",
+      "file_count": 2,
+      "total_size_mb": 460.0000047683716,
+      "personality_type": "FF-Ne/Fe-PB/C(S) #4"
+    },
+    {
+      "row_id": "459",
+      "name": "Gugu",
+      "file_count": 4,
+      "total_size_mb": 3871.583490371704,
+      "personality_type": "FM-Fi/Ne-CS/P(B) #3"
+    },
+    {
+      "row_id": "451",
+      "name": "Christina",
+      "file_count": 6,
+      "total_size_mb": 243.30833911895752,
+      "personality_type": "FM-Se/Ti-CS/B(P) #2"
+    },
+    {
+      "row_id": "398",
+      "name": "Connor Lewis",
+      "file_count": 11,
+      "total_size_mb": 1181.8367042541504,
+      "personality_type": "FF-Ne/Ti-CP/B(S) #4"
+    },
+    {
+      "row_id": "492",
+      "name": "Kiko",
+      "file_count": 2,
+      "total_size_mb": 865.7206010818481,
+      "personality_type": "MF-Ti/Se-CP/B(S) #4"
+    }
+  ]
+}

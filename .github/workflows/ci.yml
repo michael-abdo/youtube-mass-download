@@ -1,0 +1,133 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9, "3.10", "3.11"]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y chromium-browser chromium-chromedriver
+    
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov
+    
+    - name: Create test environment
+      run: |
+        cp .env.example .env
+        cp config/config.yaml.example config/config.yaml
+        mkdir -p outputs cache logs
+    
+    - name: Run import tests
+      run: |
+        python -c "
+        import sys
+        sys.path.append('.')
+        from utils.config import get_config
+        from utils.csv_manager import CSVManager
+        from utils.validation import validate_url
+        print('✅ Core imports successful')
+        "
+    
+    - name: Run basic functionality test
+      run: |
+        # Test help command
+        python simple_workflow.py --help
+        
+        # Test basic validation functions
+        python -c "
+        from utils.validation import validate_url
+        from utils.sanitization import sanitize_csv_field
+        
+        # Test URL validation
+        try:
+            validate_url('https://example.com')
+            print('✅ URL validation working')
+        except:
+            print('⚠️ URL validation needs configuration')
+        
+        # Test CSV sanitization
+        result = sanitize_csv_field('=SUM(A1:A10)')
+        assert result.startswith(\"'\"), 'CSV sanitization failed'
+        print('✅ CSV sanitization working')
+        "
+    
+    # Note: Full workflow tests require external services (Google Sheets, etc.)
+    # Enable only if you have test data and credentials configured
+    # 
+    # - name: Run integration tests
+    #   env:
+    #     DB_PASSWORD: test_password
+    #   run: |
+    #     python tests/run_all_tests.py
+
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Run security scan
+      run: |
+        # Basic security checks
+        echo "🔍 Scanning for potential security issues..."
+        
+        # Check for hardcoded secrets (basic patterns)
+        if grep -r -i "password.*=" . --include="*.py" --include="*.yaml" | grep -v "DB_PASSWORD"; then
+          echo "❌ Potential hardcoded passwords found"
+          exit 1
+        fi
+        
+        if grep -r -E "(aws_access_key|aws_secret|api_key).*=" . --include="*.py" --include="*.yaml"; then
+          echo "❌ Potential hardcoded API keys found" 
+          exit 1
+        fi
+        
+        echo "✅ Basic security scan passed"
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.10"
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black
+    
+    - name: Run linting (non-blocking)
+      run: |
+        # Run black in check mode (non-blocking for now)
+        black --check . || echo "⚠️ Code formatting suggestions available"
+        
+        # Run flake8 with relaxed rules (non-blocking for now)  
+        flake8 . --max-line-length=120 --ignore=E203,W503 || echo "⚠️ Linting suggestions available"
+        
+        echo "✅ Linting completed"

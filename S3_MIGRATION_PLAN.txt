@@ -1,0 +1,233 @@
+- S3 Migration to Filetype-Based Organization
+  - Phase 1: Preparation (4 hours)
+    - Create comprehensive backups
+      - Execute full S3 bucket backup to Glacier
+        - Configure lifecycle policy for Glacier transition
+        - Initiate bucket sync to Glacier storage class
+        - Verify backup completion via AWS CLI
+        - Document backup location and restore procedure
+      - Create versioned CSV backup
+        - Copy current outputs/output.csv to outputs/backups/
+        - Name with timestamp: output_YYYYMMDD_HHMMSS_pre_migration.csv
+        - Calculate and store MD5 checksum
+        - Create compressed archive (.gz)
+        - Upload backup to S3 backup location
+    - Set up migration tracking infrastructure
+      - Create migration_log.csv with headers
+        - row_id
+        - person_name
+        - old_s3_path
+        - new_s3_path
+        - file_type
+        - file_size
+        - md5_hash
+        - copy_timestamp
+        - verification_status
+        - error_message
+      - Create migration_summary.json for statistics
+        - total_files_to_migrate
+        - files_copied
+        - files_verified
+        - files_failed
+        - start_time
+        - end_time
+    - Generate complete file inventory
+      - List all S3 objects with metadata
+        - Use paginated listing for large buckets
+        - Capture object key, size, last_modified, etag
+        - Group by person directory
+      - Calculate MD5 checksums for all files
+        - Use S3 ETag for single-part uploads
+        - Calculate custom MD5 for multipart uploads
+        - Store in inventory_checksums.csv
+      - Create person-to-files mapping report
+        - Extract row_id and name from directory names
+        - Count files per person by type
+        - Identify any orphaned files
+        - Generate inventory_report.json
+  - Phase 2: Safe Copy Process (6 hours)
+    - Set up copy infrastructure
+      - Create target S3 directories
+        - /audio/
+        - /video/
+        - /documents/
+        - /transcripts/
+        - /images/
+        - /_unknown/
+      - Configure S3 copy settings
+        - Enable server-side encryption
+        - Set storage class appropriately
+        - Configure access permissions
+      - Create copy verification function
+        - Compare source and destination ETags
+        - Validate file sizes match
+        - Check content-type preservation
+    - Execute person-by-person migration
+      - Process person directory 1
+        - List all files in person directory
+        - For each file: determine target filetype folder
+          - .mp3, .m4a → /audio/
+          - .mp4, .webm → /video/
+          - .pdf, .doc, .docx → /documents/
+          - .srt, .vtt → /transcripts/
+          - .jpg, .png → /images/
+          - others → /_unknown/
+        - Generate new filename with person context
+          - Pattern: {row_id}_{name}_{original_filename}
+          - Example: 472_Kaioxys_DarkMacro_youtube_69XL3TrD6mE.mp3
+          - Sanitize special characters
+        - Execute S3 copy operation
+          - Use server-side copy (no download/upload)
+          - Preserve metadata
+          - Set appropriate headers
+        - Verify copy completed successfully
+          - Check destination exists
+          - Compare checksums
+          - Validate file size
+        - Log operation in migration_log.csv
+          - Record all fields
+          - Mark verification_status
+          - Note any errors
+      - Process remaining person directories
+        - Repeat above process for each
+        - Implement retry logic for failures
+        - Track progress percentage
+        - Generate periodic status reports
+    - Validate migration completeness
+      - Compare source file count to destination
+        - Group by file type
+        - Check total counts match
+        - Identify any missing files
+      - Run checksum verification report
+        - Compare all source vs destination hashes
+        - Flag any mismatches
+        - Generate verification_report.csv
+      - Create rollback inventory
+        - List all successful copies
+        - Document copy commands for reversal
+        - Store as rollback_plan.json
+  - Phase 3: CSV Update (3 hours)
+    - Prepare CSV transformation
+      - Create CSV backup (additional safety)
+        - Copy to output_pre_url_update.csv
+        - Calculate checksum
+        - Store in version control
+      - Map old URLs to new URLs
+        - Parse migration_log.csv
+        - Create URL lookup dictionary
+        - Handle multiple files per person
+      - Design new CSV schema if needed
+        - Consider adding file_count columns
+        - Add migration_completed flag
+        - Preserve all existing data
+    - Execute CSV updates
+      - Read current CSV into memory
+        - Use pandas or csv.DictReader
+        - Preserve all columns
+        - Maintain row order
+      - Update S3 URL columns
+        - Replace s3_audio_url values
+        - Replace s3_video_url values
+        - Replace s3_transcript_url values
+        - Add s3_document_url if needed
+      - Validate URL updates
+        - Check all URLs follow new pattern
+        - Verify no empty URLs where files exist
+        - Ensure person association preserved
+      - Write updated CSV
+        - Save to new file first
+        - Validate write completed
+        - Then replace original
+    - Create verification scripts
+      - Build URL accessibility checker
+        - Test each URL with HEAD request
+        - Verify 200 status codes
+        - Log any 404s or errors
+      - Generate before/after comparison
+        - Count URLs by type
+        - Check all persons have entries
+        - Compare file counts
+      - Create rollback script
+        - Script to restore original URLs
+        - Include CSV restore commands
+        - Document execution procedure
+  - Phase 4: Verification (2 hours)
+    - Test application functionality
+      - Run download verification
+        - Test downloading files using new URLs
+        - Verify correct files retrieved
+        - Check person association maintained
+      - Test upload paths
+        - Verify new uploads go to correct location
+        - Check filename generation
+        - Validate person context preserved
+      - Run integration tests
+        - Execute existing test suite
+        - Check for any failures
+        - Verify CSV operations work
+    - Verify data integrity
+      - Run person-to-file association check
+        - For each person in CSV
+        - Verify all their files accessible
+        - Check filenames contain person info
+      - Execute comprehensive diff report
+        - Compare old structure to new
+        - Verify all files accounted for
+        - Check no orphaned files
+      - Generate migration certificate
+        - Summary of files migrated
+        - Checksum verification results
+        - Timestamp and sign-off fields
+    - Obtain stakeholder approval
+      - Prepare migration summary document
+        - Total files migrated by type
+        - Any issues encountered
+        - Performance metrics
+      - Schedule review meeting
+        - Present results
+        - Demonstrate functionality
+        - Address concerns
+      - Get written sign-off
+        - Email confirmation
+        - Update project documentation
+        - Archive approval records
+  - Phase 5: Cleanup (1 hour + 30 days)
+    - Immediate post-migration tasks
+      - Archive migration logs
+        - Compress all CSV logs
+        - Upload to long-term storage
+        - Document location
+      - Update documentation
+        - Revise README files
+        - Update API documentation
+        - Note new S3 structure
+      - Tag S3 objects
+        - Add migration-date tag
+        - Add source-structure tag
+        - Enable for tracking
+    - 30-day verification period
+      - Week 1 monitoring
+        - Daily integrity checks
+        - Monitor error logs
+        - Track access patterns
+      - Week 2-3 monitoring
+        - Weekly verification runs
+        - Performance comparisons
+        - User feedback collection
+      - Week 4 final verification
+        - Complete system audit
+        - Final checksum verification
+        - Prepare for cleanup
+    - Final cleanup execution
+      - Delete old S3 structure
+        - Create final backup
+        - Execute deletion script
+        - Verify space reclaimed
+      - Archive all migration artifacts
+        - Compress logs and reports
+        - Store in cold storage
+        - Update documentation
+      - Project closure
+        - Final report generation
+        - Lessons learned document
+        - Close migration project

@@ -1,0 +1,6 @@
+pattern_name,occurrences,description,success_rate
+status_override_pattern,29,Files found despite failed/pending status,29/31
+directory_preservation_pattern,31,Files preserved in download directories,31/31
+metadata_mismatch_pattern,0,Metadata exists but status not updated,0/31
+bulk_download_pattern,11,Multiple files suggest successful bulk operation,11/31
+mixed_source_pattern,0,Files from both YouTube and Drive sources,0/31

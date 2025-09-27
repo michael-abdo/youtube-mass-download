@@ -1,0 +1,67 @@
+# Example configuration file
+# Copy this to config.yaml and update with your settings
+
+# Google Sheets configuration
+google_sheets:
+  url: "https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID/pubhtml"
+  
+# Download paths
+paths:
+  youtube_downloads: "youtube_downloads"
+  drive_downloads: "drive_downloads"
+  output_csv: "outputs/output.csv"
+  
+# Download settings
+downloads:
+  youtube:
+    default_resolution: "720"
+    default_format: "mp4"
+    subtitle_format: "vtt"
+    subtitle_languages: "en.*"
+    max_workers: 3
+  drive:
+    chunk_size_mb: 8
+    max_workers: 5
+    
+# Retry configuration
+retry:
+  max_attempts: 3
+  base_delay: 2.0
+  max_delay: 60.0
+  exponential_base: 2
+  
+# Rate limiting
+rate_limits:
+  youtube:
+    calls_per_minute: 20
+    burst_size: 5
+  drive:
+    calls_per_minute: 30
+    burst_size: 10
+    
+# Monitoring thresholds
+monitoring:
+  alert_thresholds:
+    failure_rate_percent: 40
+    disk_space_gb: 10
+    pending_downloads: 1000
+    consecutive_failures: 50
+    
+# Timeouts (in seconds)
+timeouts:
+  default: 30.0
+  file_lock: 60.0
+  http_request: 30.0
+  video_download: 300.0
+  
+# File processing
+file_processing:
+  max_csv_field_size: 131072  # 128KB
+  max_error_message_length: 200
+  
+# CSV backup settings
+csv_backup:
+  enabled: true
+  auto_backup_before_write: true
+  max_backups: 50
+  compression: true

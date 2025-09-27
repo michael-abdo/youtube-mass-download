@@ -1,0 +1,95 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Downloads and Data
+downloads/
+drive_downloads/
+youtube_downloads/
+simple_downloads/
+
+# Backups and Temporary Files
+outputs/backups/
+*.backup*
+*.tmp
+*.temp
+*.lock
+*.lock.*
+
+# Progress and State Files
+extraction_progress.json
+failed_extractions.json
+pipeline_state_*
+*_report.json
+
+# Cache
+cache/
+html_cache/
+.cache/
+
+# Environment and Config
+.env
+.env.local
+.env.*.local
+
+# Personal Development Files
+commit_*.sh
+run_*.sh
+*.patch
+
+# Archived Content
+archived/
+
+# Database Files
+*.db
+*.sqlite
+*.sql
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Documentation builds
+docs/_build/
+site/

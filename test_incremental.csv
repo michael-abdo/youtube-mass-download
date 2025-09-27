@@ -1,0 +1,3 @@
+row_id,name,email,type,link,extracted_links,youtube_playlist,google_drive,processed,document_text,youtube_status,youtube_files,youtube_media_id,drive_status,drive_files,drive_media_id,last_download_attempt,download_errors,permanent_failure,file_uuids,s3_paths
+1,Test 1,test1@example.com,Type1,,,,,,,,,,,,,,,,,
+2,Test 2,test2@example.com,Type2,,,,,,,,,,,,,,,,,

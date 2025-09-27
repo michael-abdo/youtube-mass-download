@@ -1,0 +1,29 @@
+{
+  "channels": [
+    {
+      "channel_url": "https://youtube.com/@NASA",
+      "name": "NASA Official",
+      "person_name": "NASA"
+    },
+    {
+      "channel_url": "https://youtube.com/@SpaceX", 
+      "name": "SpaceX",
+      "person_name": "Elon Musk's SpaceX"
+    },
+    {
+      "channel_url": "https://youtube.com/@TED",
+      "name": "TED",
+      "person_name": "TED"
+    },
+    {
+      "channel_url": "https://youtube.com/@NationalGeographic",
+      "name": "National Geographic", 
+      "person_name": "National Geographic"
+    },
+    {
+      "channel_url": "https://youtube.com/@BBC",
+      "name": "BBC",
+      "person_name": "BBC"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+- Input Sanitization - Add sanitization function to strip HTML/JavaScript from all error messages
+  - Create new file utils/sanitization.py with sanitize_csv_field function
+    - Remove HTML/XML tags using regex
+    - Remove JavaScript/JSON patterns like {[}]"'`
+    - Remove control characters and non-printable characters
+    - Limit length to max 200 characters
+    - Escape CSV-dangerous characters (commas, newlines, carriage returns)
+  - Import sanitization function in all modules that write to CSV
+  - Apply sanitization to all error messages before CSV insertion
+- Response Validation - Check Content-Type headers and detect HTML responses
+  - Update download_drive.py list_folder_files function
+    - Check response.headers.get('Content-Type') before processing
+    - Reject responses with 'text/html' content type
+    - Log warning when HTML response received instead of folder data
+  - Add response size validation to prevent memory exhaustion
+  - Validate response format matches expected folder data structure
+- Error Message Length Limits - Cap error messages at 200 characters
+  - Update csv_tracker.py update_csv_download_status function
+    - Apply 200 character limit to all error messages
+    - Truncate with "..." suffix when exceeding limit
+    - Preserve most important error information at start of message
+  - Update all error handling in download_drive.py
+  - Update all error handling in download_youtube.py
+- Field Content Validation - Detect and block CSV-breaking characters
+  - Create CSV field validation function
+    - Detect commas, quotes, newlines that break CSV structure
+    - Replace or escape dangerous characters safely
+    - Validate field doesn't contain unexpected data types
+  - Apply validation before all CSV write operations
+  - Add post-write validation to detect corrupted rows
+- HTML Detection - Identify and reject responses containing script tags and JavaScript
+  - Add HTML detection patterns in download_drive.py
+    - Check for DOCTYPE html declarations
+    - Check for script tags and JavaScript patterns
+    - Check for window.WIZ_global_data Google Drive JavaScript
+    - Check for JSON configuration objects
+  - Return empty result when HTML detected instead of folder data
+  - Log specific error indicating folder privacy/authentication issues
+- Enhanced Error Handling Architecture
+  - Create SafeDownloadError exception class
+    - Enforce sanitization of all error messages
+    - Categorize error types (network, authentication, parsing, etc.)
+    - Prevent raw web responses from leaking into error messages
+  - Update all download functions to use SafeDownloadError
+  - Replace generic Exception catching with specific error handling
+- CSV Integrity Protection
+  - Add CSV backup before every write operation
+    - Create timestamped backups in backups/output/ directory
+    - Validate backup creation success before proceeding
+    - Implement automatic rollback on corruption detection
+  - Add post-write CSV validation
+    - Check field count matches expected schema
+    - Validate no fields contain HTML/JavaScript content
+    - Trigger automatic rollback if corruption detected
+  - Implement row-level corruption detection and repair
+- Google Drive API Migration Planning
+  - Research Google Drive API v3 requirements and authentication
+  - Plan migration from HTML scraping to proper API calls
+  - Identify API endpoints for folder content listing
+  - Design authentication flow for production deployment
+- Testing and Validation
+  - Create test cases for sanitization function
+    - Test HTML tag removal
+    - Test JavaScript pattern removal
+    - Test CSV character escaping
+    - Test length limiting functionality
+  - Create test cases for corruption prevention
+    - Simulate HTML responses in folder listing
+    - Test error message handling with malicious content
+    - Validate CSV integrity after error conditions
+  - Add regression tests for row 492 corruption scenario

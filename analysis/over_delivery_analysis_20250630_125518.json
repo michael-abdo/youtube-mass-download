@@ -1,0 +1,660 @@
+{
+  "analysis_timestamp": "2025-06-30T12:55:18.640945",
+  "summary": {
+    "expected_rows": 41,
+    "actual_rows": 71,
+    "over_delivery_count": 31,
+    "over_delivery_percentage": 75.60975609756098
+  },
+  "discovery_mechanisms": {
+    "files_despite_failed_status": 29,
+    "incomplete_status_but_files_found": 2
+  },
+  "over_delivery_details": [
+    {
+      "row_id": "462",
+      "person_name": "Miranda Story Ruiz",
+      "personality_type": "FM-Te/Se-PC/S(B) #3",
+      "email": "mirandacan2014@gmail.com",
+      "file_count": 3,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1KicEfmftS5zc6BIeOKs7y7TMokOuQAmJ.html",
+        "1EHSk76Pyj_HLlGtdXZCYde9ZEHV6CbQu.html",
+        "Vtuber Design Concept (Not Yet Launched).pdf"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "419",
+      "person_name": "Daraith Long",
+      "personality_type": "MF-Se/Fi-CS/P(B) #3",
+      "email": "dararith.long@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1DAZmv6myb2W3URfWEVhBWWDfDOnEDrIA.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "120",
+      "person_name": "Samuel Rose",
+      "personality_type": "FF-Ti/Se-CS/P(B) #3",
+      "email": "sjrose05@yahoo.co.uk",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "144",
+      "person_name": "Ryder",
+      "personality_type": "MM-Se/Te-PC/B(S) #4",
+      "email": "eternuos@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Pro Tips.mp3"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "457",
+      "person_name": "James Hanley",
+      "personality_type": "MF-Fi/Ni-SB/P(C) #4",
+      "email": "jameshanleysomers@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "126gCQWEx1hm4G5jDVGsG8m06wdFibG9P.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "433",
+      "person_name": "Johannes Rode",
+      "personality_type": "MF-Ti/Ne-CP/S(B) #4",
+      "email": "Johannes.Rode@posteo.de",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1BrhqUmDolICYdsH4ZvuUyUw47T1oExAM.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "106",
+      "person_name": "Jasym Lewis",
+      "personality_type": "MM-Ne/Ti-CS/B(P) #4",
+      "email": "sashabeegan@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "451",
+      "person_name": "Christina",
+      "personality_type": "FM-Se/Ti-CS/B(P) #2",
+      "email": "themoonlitpath@icloud.com",
+      "file_count": 6,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Not tester! My bad.m4a",
+        "Number 1.MOV",
+        "Number 2.MOV",
+        "Number 4.MOV",
+        "Number 3.MOV",
+        "Tester? Kinesthetic? Idk.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "493",
+      "person_name": "Maddie Boyle",
+      "personality_type": "FF-Te/Se-PC/S(B) #4",
+      "email": "maddie.41014@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "youtube"
+      ],
+      "files": [
+        "4HfkyhvaaWc_transcript.vtt"
+      ],
+      "youtube_status": "partial",
+      "drive_status": NaN,
+      "youtube_playlist": "https://www.youtube.com/watch_videos?video_ids=4HfkyhvaaWc,amupMWpSA5I",
+      "drive_playlist": "nan",
+      "discovery_reason": "incomplete_status_but_files_found"
+    },
+    {
+      "row_id": "134",
+      "person_name": "Tony Pun",
+      "personality_type": "MF-Ne/Ti-CP/B(S) #3",
+      "email": "tpun27@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Pro Tips.mp3"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "442",
+      "person_name": "Fan Xingdong",
+      "personality_type": "FF-Fi/Ne-CS/P(B) #1",
+      "email": "overwhelmingdiarrhea@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Captions.srt"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "461",
+      "person_name": "Samuel Kotevski",
+      "personality_type": "MF-Ne/Ti-CP/B(S) #1",
+      "email": "samuel-tjern.kot@hotmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "10hZB1lCyg5F8JaQxK-5gLaphxTguM79l.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "429",
+      "person_name": "Ellen",
+      "personality_type": "FF-Fi/Ne-CP/S(B) #4",
+      "email": "tongxinranellen@gmail.com",
+      "file_count": 5,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1DqJ9g954W0kT4V3yAFFTY7gbP0JrFgOm.html",
+        "17A0hgMKHfL8lF_1P4KocWo0TLz3eK-gN.html",
+        "14wo6rD4AqZDH60FW-Creve2yj3mpF-y-.html",
+        "19v8EN0EfTFPw-vvXNq_6fNBN4oUcyQw1.html",
+        "1qbN54cdHSzth4YvpA2TOJQ1W4z6uW9vg.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "426",
+      "person_name": "Khaoula Kachouane",
+      "personality_type": "MF-Ni/Fi-SC/B(P) #1",
+      "email": "khaoula.kachouane@gmail.com",
+      "file_count": 2,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1ABmYjWqBckozdrYH_a84EP31h6Y0Zj_h.html",
+        "Clarifying C over B.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "477",
+      "person_name": "Shelly Chen",
+      "personality_type": "FF-Si/Te-BS/C(P) #1",
+      "email": "chensy624@outlook.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1vp9yPbkD0mTtPRzPDHA6XjE1cwJOpbL4.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "459",
+      "person_name": "Gugu",
+      "personality_type": "FM-Fi/Ne-CS/P(B) #3",
+      "email": "1185524860@qq.com",
+      "file_count": 4,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Gugu2.txt",
+        "Gugu2.mp4",
+        "gugu.srt",
+        "Gugu.mp4"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "139",
+      "person_name": "Amy Wierzbicki",
+      "personality_type": "FM-Te/Se-PC/S(B) #4",
+      "email": "Amy.wierzbicki@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "https://www.youtube.com/watch_videos?video_ids=BntS86Kq_rA",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "409",
+      "person_name": "Kim Racanelli",
+      "personality_type": "FM-Si/Te-BS/C(P) #3",
+      "email": "thewiseone1975@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "476",
+      "person_name": "Patryk Makara",
+      "personality_type": "FM-Ti/Ni-SC/B(P) #4",
+      "email": "VisionTheoryOfficial@gmail.com",
+      "file_count": 6,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Patryk Makara - OPS Typing Video.mp4",
+        "Random guitar faces.mp4",
+        "Optional - Old Typing Video worse quality.mp4",
+        "Lifting weight.mp4",
+        "Blooper 2.mp4",
+        "Blooper 1.mp4"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "474",
+      "person_name": "Brenden Ohlsson",
+      "personality_type": "MM-Ne/Ti-CP/S(B) #4",
+      "email": "ohlssonbrenden@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1u4vS-_WKpW-RHCpIS4hls6K5grOii56F.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "492",
+      "person_name": "Kiko",
+      "personality_type": "MF-Ti/Se-CP/B(S) #4",
+      "email": "kiko2657775264@gmail.com",
+      "file_count": 2,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "KIKO OPS Vedio words.txt",
+        "kiko ops vedio.mp4"
+      ],
+      "youtube_status": "pending",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "136",
+      "person_name": "Lene Wessel",
+      "personality_type": "MF-Si/Ti-SC/P(B) #3",
+      "email": "lenemarlen@wesselfamily.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "https://www.youtube.com/watch_videos?video_ids=aVPCYuZkQn8,clDajZlGaDI",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "145",
+      "person_name": "Shelby Buckalew",
+      "personality_type": "MF-Fi/Se-CP/B(S) #4",
+      "email": "shelbybuckalew@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "483",
+      "person_name": "Taro",
+      "personality_type": "MF-Ne/Fi-CP/S(B) #3",
+      "email": "taro3361046532@gmail.com",
+      "file_count": 2,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "taro official vedio.mp4",
+        "taro offical TXT.txt"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "92",
+      "person_name": "Jason Siddle",
+      "personality_type": "MF-Ne/Fi-CS/P(B) #2",
+      "email": "ayyjace@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Google Doc 2023.m4a"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "398",
+      "person_name": "Connor Lewis",
+      "personality_type": "FF-Ne/Ti-CP/B(S) #4",
+      "email": "colewis@mtu.edu",
+      "file_count": 11,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Intro.mp4",
+        "q4.mp4",
+        "q9.mp4",
+        "q3.mp4",
+        "q7.mp4",
+        "q10.mp4",
+        "q6.mp4",
+        "q1.mp4",
+        "q2.mp4",
+        "q8.mp4",
+        "q5.mp4"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "failed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "484",
+      "person_name": "Emilie",
+      "personality_type": "FF-Si/Fi-SC/P(B) #3",
+      "email": "waterspoutstwist@gmail.com",
+      "file_count": 2,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "2.Questions I answered.docx",
+        "1.Please read me.docx"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "287",
+      "person_name": "Michael Thomas",
+      "personality_type": "MF-Ne/Ti-CS/B(P) #3",
+      "email": "polik890@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Pro Tips.mp3"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "488",
+      "person_name": "Jeremy May",
+      "personality_type": "FF-Ne/Fe-PB/C(S) #4",
+      "email": "Jeremy:deathb4dishonor93@gmail.com",
+      "file_count": 2,
+      "file_sources": [
+        "youtube"
+      ],
+      "files": [
+        "d6IR17a0M2o_transcript.vtt",
+        "d6IR17a0M2o.mp4"
+      ],
+      "youtube_status": NaN,
+      "drive_status": NaN,
+      "youtube_playlist": "https://www.youtube.com/watch_videos?video_ids=d6IR17a0M2o",
+      "drive_playlist": "nan",
+      "discovery_reason": "incomplete_status_but_files_found"
+    },
+    {
+      "row_id": "486",
+      "person_name": "Shelsea Evans",
+      "personality_type": "MF-Si/Te-BS/P(C) #3",
+      "email": "sevans0711@yahoo.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "1_dwbrXDDTlEYMGlJcQR3OsOxbAe2Ri2r.html"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    },
+    {
+      "row_id": "308",
+      "person_name": "Ingvild Kalsveen",
+      "personality_type": "MF-Ni/Ti-SC/P(B) #3",
+      "email": "i.kalsveen@gmail.com",
+      "file_count": 1,
+      "file_sources": [
+        "drive"
+      ],
+      "files": [
+        "Nytt opptak 4.mp3"
+      ],
+      "youtube_status": "failed",
+      "drive_status": "completed",
+      "youtube_playlist": "nan",
+      "drive_playlist": "nan",
+      "discovery_reason": "files_despite_failed_status"
+    }
+  ],
+  "patterns_discovered": {
+    "file_source_patterns": {
+      "drive": 29,
+      "youtube": 2
+    },
+    "personality_type_patterns": {
+      "FM-Te/Se-PC/S(B) #3": 1,
+      "MF-Se/Fi-CS/P(B) #3": 1,
+      "FF-Ti/Se-CS/P(B) #3": 1,
+      "MM-Se/Te-PC/B(S) #4": 1,
+      "MF-Fi/Ni-SB/P(C) #4": 1,
+      "MF-Ti/Ne-CP/S(B) #4": 1,
+      "MM-Ne/Ti-CS/B(P) #4": 1,
+      "FM-Se/Ti-CS/B(P) #2": 1,
+      "FF-Te/Se-PC/S(B) #4": 1,
+      "MF-Ne/Ti-CP/B(S) #3": 1,
+      "FF-Fi/Ne-CS/P(B) #1": 1,
+      "MF-Ne/Ti-CP/B(S) #1": 1,
+      "FF-Fi/Ne-CP/S(B) #4": 1,
+      "MF-Ni/Fi-SC/B(P) #1": 1,
+      "FF-Si/Te-BS/C(P) #1": 1,
+      "FM-Fi/Ne-CS/P(B) #3": 1,
+      "FM-Te/Se-PC/S(B) #4": 1,
+      "FM-Si/Te-BS/C(P) #3": 1,
+      "FM-Ti/Ni-SC/B(P) #4": 1,
+      "MM-Ne/Ti-CP/S(B) #4": 1,
+      "MF-Ti/Se-CP/B(S) #4": 1,
+      "MF-Si/Ti-SC/P(B) #3": 1,
+      "MF-Fi/Se-CP/B(S) #4": 1,
+      "MF-Ne/Fi-CP/S(B) #3": 1,
+      "MF-Ne/Fi-CS/P(B) #2": 1,
+      "FF-Ne/Ti-CP/B(S) #4": 1,
+      "FF-Si/Fi-SC/P(B) #3": 1,
+      "MF-Ne/Ti-CS/B(P) #3": 1,
+      "FF-Ne/Fe-PB/C(S) #4": 1,
+      "MF-Si/Te-BS/P(C) #3": 1,
+      "MF-Ni/Ti-SC/P(B) #3": 1
+    },
+    "file_count_distribution": {
+      "3": 1,
+      "1": 20,
+      "6": 2,
+      "5": 1,
+      "2": 5,
+      "4": 1,
+      "11": 1
+    }
+  },
+  "key_insights": [
+    "Primary discovery mechanism: files_despite_failed_status (29 rows)",
+    "File source bias: drive (29 vs 2)",
+    "High file count outliers: 4 rows with 5+ files"
+  ]
+}

@@ -1,0 +1,124 @@
+[
+  {
+    "url": "https://docs.google.com/document/d/1Ael_iSce9tO3SECHp5X5N0yYgahDnnCY837aYsC21PE/edit?tab=t.0",
+    "load_time": 5.548862934112549,
+    "page_title": "Caroline - Google Docs",
+    "final_url": "https://docs.google.com/document/d/1Ael_iSce9tO3SECHp5X5N0yYgahDnnCY837aYsC21PE/edit?tab=t.0",
+    "content_checks": [
+      [
+        1,
+        321353,
+        140
+      ],
+      [
+        3,
+        321353,
+        140
+      ],
+      [
+        5,
+        321353,
+        140
+      ],
+      [
+        10,
+        321353,
+        140
+      ],
+      [
+        15,
+        321353,
+        140
+      ]
+    ],
+    "content_stable": true,
+    "height_changed": false,
+    "selector_results": {
+      ".kix-pagesettings-protected-text": {
+        "found": false
+      },
+      ".kix-page": {
+        "found": false
+      },
+      ".doc-content": {
+        "found": false
+      },
+      ".google-docs-content": {
+        "found": false
+      }
+    },
+    "discovered_selectors": {},
+    "youtube_links": [],
+    "drive_links": [],
+    "text_youtube": [],
+    "text_drive": [],
+    "total_links": 0,
+    "recommendations": {
+      "best_selector": null,
+      "needs_longer_wait": false,
+      "needs_better_selectors": true,
+      "has_meaningful_content": false
+    }
+  },
+  {
+    "url": "https://docs.google.com/document/d/106UzVKTBceNnihO711snD-AeJOK9-fki9EINggkLQU8/edit?tab=t.0",
+    "load_time": 8.419606685638428,
+    "page_title": "James Kirton (Hugo Martin) - Google Docs",
+    "final_url": "https://docs.google.com/document/d/106UzVKTBceNnihO711snD-AeJOK9-fki9EINggkLQU8/edit?tab=t.0",
+    "content_checks": [
+      [
+        1,
+        592006,
+        265
+      ],
+      [
+        3,
+        592006,
+        265
+      ],
+      [
+        5,
+        592006,
+        265
+      ],
+      [
+        10,
+        592006,
+        265
+      ],
+      [
+        15,
+        592006,
+        265
+      ]
+    ],
+    "content_stable": true,
+    "height_changed": false,
+    "selector_results": {
+      ".kix-pagesettings-protected-text": {
+        "found": false
+      },
+      ".kix-page": {
+        "found": false
+      },
+      ".doc-content": {
+        "found": false
+      },
+      ".google-docs-content": {
+        "found": false
+      }
+    },
+    "discovered_selectors": {},
+    "youtube_links": [],
+    "drive_links": [],
+    "text_youtube": [],
+    "text_drive": [],
+    "total_links": 0,
+    "recommendations": {
+      "best_selector": null,
+      "needs_longer_wait": false,
+      "needs_better_selectors": true,
+      "has_meaningful_content": false
+    }
+  }
+]

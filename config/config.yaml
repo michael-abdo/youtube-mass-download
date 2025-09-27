@@ -1,0 +1,491 @@
+# Configuration file for the scraping and download system
+# All configurable values are centralized here
+
+# Google Sheets Configuration
+google_sheets:
+  url: "https://docs.google.com/spreadsheets/u/1/d/e/2PACX-1vRqqjqoaj8sEZBfZRw0Og7g8ms_0yTL2MsegTubcjhhBnXr1s1jFBwIVAsbkyj1xD0TMj06LvGTQIHU/pubhtml?pli=1#"
+  cache_file: "cache/google_sheet_cache.html"
+  target_div_id: 1159146182
+
+
+# File Paths and Directories
+paths:
+  output_csv: "outputs/output.csv"
+  youtube_downloads: "youtube_downloads"
+  drive_downloads: "drive_downloads"
+  html_cache: "html_cache"
+  logs_dir: "logs"
+  cache_dir: "cache"
+  extraction_progress: "extraction_progress.json"
+  failed_extractions: "failed_extractions.json"
+  text_extraction_output: "text_extraction_output.csv"
+  sheet_cache: "sheet.html"
+  simple_downloads_dir: "simple_downloads"
+  # DRY Phase 3 additions
+  downloads_dir: "downloads"  # Default download directory for unified downloader
+
+# Download Settings
+downloads:
+  # Storage mode: "local" (default) or "s3" (direct to S3)
+  storage_mode: "s3"  # Changed from "local" to "s3" as default
+  # S3 settings for direct uploads
+  s3:
+    default_bucket: "typing-clients-uuid-system"
+    streaming_enabled: true
+    skip_local_storage: true
+
+  youtube:
+    default_resolution: "720"
+    default_format: "mp4"
+    subtitle_format: "vtt"
+    subtitle_languages: "en.*"
+    max_workers: 4
+    rate_limit_per_second: 2.0
+    # DRY Phase 3 additions
+    quality: "128K"  # Default audio quality for audio downloads
+    format: "mp3"    # Default audio format for audio downloads
+    auto_update_yt_dlp: true  # Automatically update yt-dlp before downloads
+  drive:
+    chunk_sizes:
+      small: 1048576      # 1MB for files < 10MB
+      medium: 2097152     # 2MB for files 10-100MB  
+      large: 8388608      # 8MB for files > 100MB
+    size_thresholds:
+      medium: 10485760    # 10MB
+      large: 104857600    # 100MB
+
+# Retry Configuration
+retry:
+  max_attempts: 3
+  base_delay: 1.0
+  max_delay: 60.0
+  jitter: true
+  subprocess:
+    max_attempts: 3
+    base_delay: 2.0
+  download:
+    max_attempts: 3
+    base_delay: 5.0
+
+# AWS Configuration
+aws_profile: "zenex"  # AWS profile for S3 access
+aws_region: "us-west-2"  # AWS region
+
+# Timeout Settings (in seconds)
+timeouts:
+  default: 30.0
+  file_lock: 30.0
+  http_request: 60.0
+  selenium_wait: 20.0
+  video_download: 300.0  # 5 minutes for video downloads
+  drive_download: 300.0  # 5 minutes for drive downloads
+
+# File Processing
+file_processing:
+  csv_chunk_size: 1000
+  streaming_threshold: 5242880  # 5MB - use streaming for files larger than this
+  max_csv_field_size: 131072    # 128KB max field size
+
+# CSV Column Definitions (DRY refactoring)
+csv_columns:
+  basic:
+    - row_id
+    - name
+    - email
+    - type
+    - link
+  text:
+    - row_id
+    - name
+    - email
+    - type
+    - link
+    - document_text
+    - processed
+    - extraction_date
+  full:
+    - row_id
+    - name
+    - email
+    - type
+    - link
+    - extracted_links
+    - youtube_playlist
+    - google_drive
+    - processed
+    - document_text
+    - youtube_status
+    - youtube_files
+    - youtube_media_id
+    - drive_status
+    - drive_files
+    - drive_media_id
+    - last_download_attempt
+    - download_errors
+    - permanent_failure
+    - file_uuids
+    - s3_paths
+
+# Parallel Processing
+parallel:
+  max_workers: 4
+  chunk_size: 10
+  progress_update_interval: 1.0
+
+# Batch Processing
+batch_processing:
+  default_batch_size: 10
+  text_extraction_batch_size: 10
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "[%(asctime)s] [%(name)s] [%(levelname)s] %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_format: "[%(asctime)s] [%(levelname)s] %(message)s"
+  
+# File Locking
+file_locking:
+  enabled: true
+  timeout: 30.0
+  check_interval: 0.1
+
+# Web Scraping
+web_scraping:
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+  accept_header: "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+  accept_language: "en-US,en;q=0.5"
+  streaming_chunk_size: 8192
+  selenium:
+    window_size: "1920,1080"
+    scroll_delay: 0.1
+    scroll_step: 300
+    page_load_extra_wait: 3
+
+# Google Docs Configuration
+google_docs:
+  extraction:
+    # Extraction methods in priority order
+    methods:
+      - name: "http"
+        enabled: true
+        timeout: 30.0
+        retry_attempts: 2
+        priority: 1
+      - name: "selenium"
+        enabled: true
+        timeout: 60.0
+        retry_attempts: 1
+        priority: 2
+    
+    # HTTP export settings
+    http_export:
+      formats:
+        - format: "txt"
+          url_template: "https://docs.google.com/document/d/{doc_id}/export?format=txt"
+          mime_type: "text/plain"
+          priority: 1
+        - format: "html"
+          url_template: "https://docs.google.com/document/d/{doc_id}/export?format=html"
+          mime_type: "text/html"
+          priority: 2
+      
+      # Fallback public view URLs
+      public_view_urls:
+        - "https://docs.google.com/document/d/{doc_id}/pub"
+        - "https://docs.google.com/document/d/{doc_id}/preview"
+    
+    # Content processing rules
+    content_processing:
+      min_content_length: 50
+      max_content_length: 10485760  # 10MB
+      strip_google_metadata: true
+      normalize_whitespace: true
+      encoding: "utf-8"
+    
+    # Error handling
+    error_handling:
+      permission_denied_fallback: true
+      rate_limit_backoff: true
+      malformed_doc_skip: true
+      max_fallback_attempts: 1
+
+# Database Configuration (S3 UUID System)
+database:
+  host: "localhost"
+  port: 5432
+  name: "typing_clients_uuid"
+  user: "migration_user"
+  password: "${DB_PASSWORD:-}"  # Set via environment variable
+  connection_pool:
+    min_connections: 1
+    max_connections: 10
+    timeout: 30
+  query_timeout: 30
+  fallback_to_csv: true  # Fallback to CSV if database unavailable
+  
+# Security
+security:
+  ssl_verify: true
+  allowed_domains:
+    youtube:
+      - "youtube.com"
+      - "youtu.be"
+      - "www.youtube.com"
+    drive:
+      - "drive.google.com"
+      - "docs.google.com"
+  
+# Limits
+limits:
+  max_retries: 3
+  max_concurrent_downloads: 10
+  max_file_size: 5368709120  # 5GB max file size
+
+# CSV Backup Configuration
+csv_backup:
+  enabled: true
+  backup_dir: "backups"
+  max_backups: 10
+  compress: true
+  auto_backup_before_write: true
+
+# Rate Limiting Configuration
+rate_limiting:
+  default_rate: 2.0  # requests per second
+  services:
+    youtube:
+      rate: 2.0  # 2 requests per second
+      burst: 5   # Allow burst of 5 requests
+    google_drive:
+      rate: 3.0  # 3 requests per second
+      burst: 10  # Allow burst of 10 requests
+    google_docs:
+      rate: 1.0  # 1 request per second
+      burst: 3   # Allow burst of 3 requests
+    google_docs_http:
+      rate: 2.0  # 2 requests per second for HTTP export (faster than Selenium)
+      burst: 5   # Allow burst of 5 requests
+    selenium:
+      rate: 0.5  # 1 request every 2 seconds
+      burst: 2   # Allow burst of 2 requests
+
+# Cleanup Configuration
+cleanup:
+  temp_file_patterns:
+    - "temp_*.py"
+    - "*_temp.py"
+    - "cleanup_*.py"
+    - "execute_cleanup.py"
+    - "simple_cleanup.py"
+    - "final_*.py"
+    - "run_cleanup.py"
+    - "*.tmp"
+    - "*.temp"
+    - "__pycache__"
+    - "*.pyc"
+  backup_patterns:
+    - "*.backup"
+    - "*.backup_*" 
+    - "backup_*"
+    - "backups/**/*.gz"
+    - "*.csv.backup_*"
+  empty_dir_patterns:
+    - "cache"
+    - "tmp"
+    - "temp"
+    - "html_cache"
+  default:
+    temp_files: true
+    old_backups: true
+    empty_dirs: true
+    backup_retention_days: 30
+
+# Pipeline Configuration
+pipelines:
+  # Full ingestion pipeline - from Google Sheets to S3
+  full_ingestion:
+    description: "Complete ingestion pipeline from Google Sheets to S3"
+    stages:
+      - name: "extract_data"
+        description: "Extract data from Google Sheets and process documents"
+        enabled: true
+        command: ["python3", "simple_workflow.py"]
+        timeout: 600  # 10 minutes
+        success_markers:
+          - file_exists: "outputs/output.csv"
+        retry_on_failure: true
+        
+      - name: "download_content"
+        description: "Download YouTube and Drive content"
+        enabled: true
+        command: ["python3", "download_all_minimal.py", "--no-timeout"]
+        timeout: 1800  # 30 minutes
+        success_markers:
+          - directory_exists: "downloads"
+          - directory_not_empty: "downloads"
+        retry_on_failure: true
+        
+      - name: "upload_to_s3"
+        description: "Upload downloaded content to S3"
+        enabled: true
+        command: ["python3", "utils/s3_manager.py", "--mode", "streaming"]
+        timeout: 1200  # 20 minutes
+        success_markers:
+          - file_exists: "s3_upload_report.json"
+        retry_on_failure: true
+    
+    # Pipeline-level settings
+    settings:
+      resume_enabled: true
+      state_file_prefix: "pipeline_state"
+      cleanup_on_success: true
+      notification_on_failure: false
+      max_retries: 2
+      retry_delay: 60  # seconds
+  
+  # Direct S3 pipeline - downloads directly to S3 without local storage
+  s3_direct_ingestion:
+    description: "Direct S3 ingestion pipeline - no local storage"
+    stages:
+      - name: "extract_and_upload"
+        description: "Extract data and stream directly to S3"
+        enabled: true
+        command: ["python3", "simple_workflow_s3.py", "--mode", "full", "--download"]
+        timeout: 1800  # 30 minutes
+        success_markers:
+          - file_exists: "outputs/output.csv"
+          - file_exists: "s3_direct_upload_report.json"
+        retry_on_failure: true
+    
+    settings:
+      resume_enabled: true
+      state_file_prefix: "s3_pipeline_state"
+      cleanup_on_success: false
+      notification_on_failure: false
+      max_retries: 2
+      retry_delay: 60
+  
+  # Enhanced pipeline - auto-detects storage mode from config
+  enhanced_ingestion:
+    description: "Enhanced pipeline with auto storage mode detection"
+    stages:
+      - name: "extract_data"
+        description: "Extract data from Google Sheets"
+        enabled: true
+        command: ["python3", "simple_workflow.py"]
+        timeout: 600
+        success_markers:
+          - file_exists: "outputs/output.csv"
+        retry_on_failure: true
+        
+      - name: "download_content"
+        description: "Download content (auto-detects storage mode)"
+        enabled: true
+        command: ["python3", "download_all_enhanced.py", "--storage", "auto"]
+        timeout: 1800
+        success_markers:
+          - file_exists: "s3_direct_upload_report.json"  # If S3 mode
+        retry_on_failure: true
+    
+    settings:
+      resume_enabled: true
+      state_file_prefix: "enhanced_pipeline_state"
+      cleanup_on_success: true
+  
+  # Example of a partial pipeline for testing
+  test_extraction:
+    description: "Test pipeline for document extraction only"
+    stages:
+      - name: "extract_data"
+        description: "Extract data from Google Sheets and process documents"
+        enabled: true
+        command: ["python3", "simple_workflow.py", "--test-mode"]
+        timeout: 300  # 5 minutes
+        success_markers:
+          - file_exists: "outputs/output.csv"
+    settings:
+      resume_enabled: false
+      cleanup_on_success: false
+  
+  # Test pipeline for Sam Torode - skip extraction, focus on download/upload
+  test_sam_pipeline:
+    description: "Test pipeline for Sam Torode's data - download and S3 upload only"
+    stages:
+      - name: "download_content"
+        description: "Download YouTube and Drive content"
+        enabled: true
+        command: ["python3", "download_all_minimal.py", "--no-timeout", "--rows", "502"]
+        timeout: 600  # 10 minutes for specific row
+        success_markers:
+          - directory_exists: "downloads/502_Sam_Torode"
+          - directory_not_empty: "downloads/502_Sam_Torode"
+        retry_on_failure: true
+        
+      - name: "upload_to_s3"
+        description: "Upload downloaded content to S3"
+        enabled: true
+        command: ["python3", "utils/s3_manager.py", "--mode", "streaming", "--downloads-dir", "downloads/502_Sam_Torode"]
+        timeout: 300  # 5 minutes
+        success_markers:
+          - file_exists: "s3_upload_report.json"
+        retry_on_failure: true
+    settings:
+      resume_enabled: true
+      cleanup_on_success: false
+      notification_on_failure: false
+  
+  # Quick test - just upload Sam's existing downloads to S3
+  test_sam_s3_upload:
+    description: "Test S3 upload with Sam Torode's existing downloads"
+    stages:
+      - name: "upload_to_s3"
+        description: "Upload Sam's downloaded content to S3"
+        enabled: true
+        command: ["python3", "utils/s3_manager.py", "--mode", "streaming"]
+        timeout: 300  # 5 minutes
+        success_markers:
+          - file_exists: "s3_upload_report.json"
+        retry_on_failure: true
+    settings:
+      resume_enabled: false
+      cleanup_on_success: false
+
+# Mass Download Configuration
+mass_download:
+  max_concurrent_channels: 2
+  max_concurrent_downloads: 5
+  max_videos_per_channel: 3
+  skip_existing_videos: true
+  continue_on_error: true
+  download_videos: true
+  download_mode: "stream_to_s3"  # Options: "stream_to_s3", "local", "metadata_only"
+  
+  resource_limits:
+    max_cpu_percent: 80.0
+    max_memory_percent: 80.0
+    max_queue_size: 100
+    check_interval_seconds: 5.0
+    
+  error_recovery:
+    circuit_breaker:
+      failure_threshold: 5
+      recovery_timeout: 60
+      half_open_requests: 1
+    retry:
+      max_retries: 3
+      initial_delay: 1.0
+      max_delay: 30.0
+      exponential_base: 2.0
+      
+  s3_settings:
+    bucket_name: "youtube-mass-download-test-20250825162044"  # Test bucket
+    multipart_threshold: 104857600  # 100MB
+    max_concurrency: 10
+    use_threads: true
+    
+  logging:
+    log_level: "INFO" 
+    separate_error_log: true
+    rotation_max_bytes: 10485760  # 10MB
+    rotation_backup_count: 5
